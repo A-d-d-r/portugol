@@ -1,0 +1,224 @@
+programa
+
+{
+	inclua biblioteca Texto --> txt
+	funcao inicio () {
+		cadeia entender, terrestre, aereo, aquatico, cabeUmaPessoa, usaCapacete, temPass, pesado, pedal, trilho, andaPista,  altoT, leve, carroca, cobrador, pular, viajaDentro, devagar, piloto, asasF, vooVertical, cobertoAgua, navAgua, vela, motor, altoA, descoberto
+
+		escreva("Vou através de perguntas, adivinhar qual veículo você tem em mente baseado em meu banco de dados, me responda com SIM ou NÃO, entendeu? ")
+		leia(entender)
+		escreva("Esses são os nossos veículos: ")
+		escreva("TRATOR \n")
+		escreva("BICICLETA \n")
+		escreva("MOTO \n")
+		escreva("TREM \n")
+		escreva("CARRO \n")
+		escreva("CAMINHÃO \n")
+		escreva("ÔNIBUS \n")
+		escreva("ASA DELTA \n")
+		escreva("BALÃO \n")
+		escreva("AVIÃO \n")
+		escreva("HELICÓPTERO \n")
+		escreva("SUBMARINO \n")
+		escreva("BARCO \n")
+		escreva("NAVIO \n")
+		escreva("LANCHA \n")
+		
+
+		se (entender == "sim" ou entender == "SIM") {
+			escreva("Maravilha, vamos começar! ")
+			escreva("É terrestre? ")
+			leia(terrestre)
+			txt.caixa_baixa(terrestre)
+
+			
+			se (terrestre == "sim") {
+				escreva("Cabe apenas uma pessoa? ")
+				leia(cabeUmaPessoa)
+				txt.caixa_baixa(cabeUmaPessoa)
+				
+				se (cabeUmaPessoa == "sim") {
+					escreva("É pesado? ") 
+					leia(pesado)
+					txt.caixa_baixa(pesado)
+					
+					se (pesado == "sim") {
+						escreva("O veículo que você pensou, é um TRATOR!")
+					}
+
+					
+					senao se (pesado == "não" ou pesado == "nao") {
+						escreva("Tem pedal? ")
+						leia(pedal) 
+						txt.caixa_baixa(pedal)
+
+						se (pedal == "sim") {
+							escreva("O veículo que você pensou, é uma BICICLETA!")
+						}
+					}
+				}
+				senao se (cabeUmaPessoa == "não" ou cabeUmaPessoa == "nao") {
+					escreva("Usa capacete? ")
+					leia(usaCapacete)
+					txt.caixa_baixa(usaCapacete)
+
+					se (usaCapacete == "sim") {
+						escreva("O veículo que você pensou, é uma MOTO!")
+					}
+
+
+					
+					senao se (usaCapacete == "não" ou usaCapacete == "nao") {
+						escreva("Tem passageiro? ")
+						leia(temPass)
+
+						se (temPass == "sim") {
+							escreva("Usa trilho? ") 
+							leia(trilho)
+							txt.caixa_baixa(trilho)
+
+							se (trilho == "sim") {
+								escreva("O veículo que você pensou, é um TREM!")
+							}
+							senao se (trilho == "não" ou trilho == "nao") {
+								escreva("Anda na pista? ")
+								leia(andaPista)
+
+								se (andaPista == "sim") {
+									escreva("É alto? ")
+									leia(altoT)
+
+									se (altoT == "sim") {
+										escreva("Usa carroceria? ")
+										leia(carroca)
+
+										se (carroca == "sim") {
+											escreva("O veículo que você pensou, é um CAMINHÃO!")
+										}
+										senao se (carroca == "não" ou carroca == "nao") {
+											escreva("Pode ter cobrador? ")
+											leia(cobrador)
+
+											se (cobrador == "sim") {
+												escreva("O veículo que você pensou, é um ÔNIBUS!")
+											}
+										}
+									}
+									senao se (altoT == "não" ou altoT == "nao") {
+										escreva("É veículo leve? ")
+										leia(leve)
+
+										se (leve == "sim") {
+											escreva("O veículo que você pensou, é um CARRO!")
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			} 
+
+
+			
+			senao se (terrestre == "não" ou terrestre == "nao") {
+				escreva("É aéreo? ")
+				leia(aereo)
+				
+				se (aereo == "sim") {
+					escreva("Precisa pular? ") 
+					leia(pular)
+
+					se (pular == "sim") {
+						escreva("O veículo que você pensou, é uma ASA DELTA!")
+					}
+					senao se (pular == "não" ou pular == "nao") {
+						escreva("Você viaja dentro? ")
+						leia(viajaDentro)
+
+						se (viajaDentro == "sim") {
+							escreva("É devagar? ")
+							leia(devagar) 
+
+							se (devagar == "sim") {
+								escreva("O veículo que você pensou, é um BALÃO!")
+							}
+							senao se (devagar == "não" ou devagar == "nao") {
+								escreva("Tem piloto? ")
+								leia(piloto)
+
+								se (piloto == "sim") {
+									escreva("Possui asas fixas? ")
+									leia(asasF)
+
+									se (asasF == "sim") {
+										escreva("O veículo que você pensou, é um AVIÃO!")
+									}
+									senao se (asasF == "não" ou asasF == "nao") {
+										escreva("Faz voo vertical (pra cima)? ")
+										leia(vooVertical)
+
+										se (vooVertical == "sim") {
+											escreva("O veículo que você pensou, é um HELICÓPTERO!")
+										}
+									}
+								}
+							}
+						}
+					}
+				} 
+				
+				senao se (aereo == "não" ou aereo == "nao") {
+					escreva("É aquático? ")
+					leia(aquatico)
+
+					se (aquatico == "sim") {
+						escreva("É coberto d'água(Submerso)? ")
+						leia(cobertoAgua)
+
+						se (cobertoAgua == "sim") {
+							escreva("O veículo que você pensou, é um SUBMARINO!")
+						}
+						senao se (cobertoAgua == "não" ou cobertoAgua == "nao") {
+							escreva("Navega na água? ") 
+							leia(navAgua)
+
+							se (navAgua == "sim") {
+								escreva("Possui vela? ")
+								leia(vela)
+
+								se (vela == "sim") {
+									escreva("O veículo que você pensou, é um BARCO!")
+								} 
+								senao se (vela == "não" ou vela == "nao") {
+									escreva("Tem motor? ")
+									leia(motor)
+
+									se (motor == "sim") {
+										escreva("É alto? ")
+										leia(altoA)
+
+										se (altoA == "sim") {
+											escreva("O veículo que você pensou, é um NAVIO!")
+										}
+										senao se (altoA == "não" ou altoA == "nao") {
+											escreva("Pode ser descoberto? ")
+											leia(descoberto)
+
+											se (descoberto == "sim") {
+												escreva("O veículo que você pensou, é uma LANCHA!")
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			senao {
+				escreva("Não entendi. Faça de novo, por favor") 
+			}
+		}
+	}
+}
