@@ -1,0 +1,159 @@
+//PORTUGOL STUDIO
+
+programa
+{
+	
+	funcao inicio(){
+		real nota, maiorNA, maiorNB, maiorNC, maiorND
+		real maiorNT
+		cadeia nome, maiorNomeNotaTodas
+		caracter turmaA, turmaB, turmaC, turmaD
+		inteiro contadorAluno, aprovados, aprovadosA, aprovadosB, aprovadosC, aprovadosD = 0
+		
+		nota = 0.0
+		maiorNA = 0.0
+		maiorNB = 0.0
+		maiorNC = 0.0
+		maiorND = 0.0
+		contadorAluno = 0
+		aprovados = 0
+		aprovadosA = 0
+		aprovadosB = 0
+		aprovadosC = 0
+		aprovadosD = 0
+		maiorNomeNotaTodas = ""
+
+		escreva("TURMA A \n")
+		//-----------------TURMA A------------------
+		para (contadorAluno = 1 ; contadorAluno <= 25 ; contadorAluno = contadorAluno+1 ) {
+			escreva(contadorAluno, "° ", "Diga seu nome: ")
+			leia(nome)
+			
+			escreva("nota: ")
+			leia(nota)
+			escreva("\n")
+
+			
+			se (nota >= 7) {
+				aprovados = aprovados + 1
+			}
+			se (nota >= 7) {
+				aprovadosA = aprovadosA + 1
+			}
+			se (nota > maiorNA) {
+				maiorNA = nota
+				se (maiorNA > maiorNB e maiorNA > maiorNC e  maiorNA > maiorND) {
+				maiorNomeNotaTodas = nome
+				}
+			}
+			
+		}
+		//-------------------------------------------
+		escreva("TURMA B \n")
+		//-----------------TURMA B------------------
+		para (contadorAluno = 1 ; contadorAluno <= 25 ; contadorAluno = contadorAluno+1 ) {
+			escreva(contadorAluno, "° ", "Diga seu nome: ")
+			leia(nome)
+			
+			escreva("nota: ")
+			leia(nota)
+			escreva("\n")
+			
+			
+			se (nota >= 7) {
+				aprovados = aprovados + 1
+			}
+			se (nota >= 7) {
+				aprovadosB = aprovadosB + 1
+			}
+			
+			se (nota > maiorNB) {
+				se (nota == maiorNA) {
+					
+				} senao {
+					maiorNB = nota
+				}
+			}
+			se ((maiorNB > maiorNA) e (maiorNB > maiorNC) e  (maiorNB > maiorND)) {
+				maiorNomeNotaTodas = nome
+			}
+		}
+		
+		//-------------------------------------------
+		escreva("TURMA C \n")
+		//-----------------TURMA C------------------
+		para (contadorAluno = 1 ; contadorAluno <= 25 ; contadorAluno = contadorAluno+1 ) {
+			escreva(contadorAluno, "° ", "Diga seu nome: ")
+			leia(nome)
+			
+			escreva("nota: ")
+			leia(nota)
+			escreva("\n")
+
+
+			se (nota >= 7) {
+				aprovados = aprovados + 1
+			}
+			se (nota >= 7) {
+				aprovadosC = aprovadosC + 1
+			}
+			
+			se (nota > maiorNC) {
+				se (nota == maiorNB ou nota == maiorNA) {
+					
+				} senao {
+					maiorNC = nota
+				}
+			}
+			se ((maiorNC > maiorNA) e (maiorNC > maiorNB) e  (maiorNC > maiorND)) {
+				maiorNomeNotaTodas = nome
+			}
+		}
+		//-------------------------------------------
+		escreva("TURMA D \n")
+		//-----------------TURMA C------------------
+		para (contadorAluno = 1 ; contadorAluno <= 25 ; contadorAluno = contadorAluno+1 ) {
+			escreva(contadorAluno, "° ", "Diga seu nome: ")
+			leia(nome)
+			
+			escreva("nota: ")
+			leia(nota)
+			escreva("\n")
+
+
+			se (nota >= 7) {
+				aprovados = aprovados + 1
+			}
+			se (nota >= 7) {
+				aprovadosD = aprovadosD + 1
+			}
+			
+			se (nota > maiorND) {
+				se (nota == maiorNC ou nota == maiorNB ou nota == maiorNA) {
+					
+				} senao {
+					maiorND = nota
+				}
+			}
+			se ((maiorND > maiorNA) e (maiorND > maiorNB) e  (maiorND > maiorNC)) {
+				maiorNomeNotaTodas = nome
+			}
+		}
+		
+		//-------------------------------------------
+
+		
+		escreva("Quantidade total de alunos aprovados: ", aprovados, "\n")
+		escreva("Quantidade total de alunos aprovados - TURMA A: ", aprovadosA, "\n")
+		escreva("Quantidade total de alunos aprovados - TURMA B: ", aprovadosB, "\n")
+		escreva("Quantidade total de alunos aprovados - TURMA C: ", aprovadosC, "\n")
+		escreva("Quantidade total de alunos aprovados - TURMA D: ", aprovadosD, "\n")
+		escreva("Maior nota da TURMA A: ", maiorNA, "\n")
+		escreva("Maior nota da TURMA B: ", maiorNB, "\n")
+		escreva("Maior nota da TURMA C: ", maiorNC, "\n")
+		escreva("Maior nota da TURMA D: ", maiorND, "\n")
+		escreva("\n")
+		escreva("Maior nota de todas: ", maiorNomeNotaTodas, "\n")
+		
+	}		
+}
